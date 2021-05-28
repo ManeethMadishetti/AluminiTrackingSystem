@@ -1,0 +1,10 @@
+.makemiddle {
+  text-align: center;
+  background-color: blue;
+  margin: auto;
+  padding: 15px;
+}
+.coursle {
+  height: inherit;
+  width: inherit;
+}
