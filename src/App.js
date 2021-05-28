@@ -9,9 +9,13 @@ import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Home from "./Feed/Home" ;
-import Blogs from './Feed/Blogs';
+
 import Memory from './Memories/Memory';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ScheduleIcon from '@material-ui/icons/Schedule';
+import EventIcon from '@material-ui/icons/Event';
+import Blogs from './Blogs';
+import Events from './Events';
 
 function App() {
   return (
@@ -26,9 +30,11 @@ function App() {
 
                <Link to="/events"> <HeaderOption Icon={DynamicFeedIcon} title="Events"/></Link>
                <Link to="/memory"> <HeaderOption Icon={WebIcon} title="Memories"/> </Link>
+               <Link to="/blogs"> <HeaderOption Icon={ScheduleIcon} title="Schedules"/> </Link>
                <Link> <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/> </Link>
                <Link><HeaderOption Icon={ChatIcon} title="Query Alumina"/> </Link>
                <Link><HeaderOption Icon={NotificationsIcon} title="Notifications"/> </Link>
+               <Link to="/Events"><HeaderOption Icon={EventIcon} title="Events"></HeaderOption></Link>
                <Link> <HeaderOption avatar={true} title="Me" /> </Link>
             </div>
        </div>
@@ -45,6 +51,9 @@ function App() {
           </Route>
           <Route path="/blogs">
             <Blogs />
+          </Route>
+          <Route path="/Events">
+              <Events/>
           </Route>
           </switch>
 
