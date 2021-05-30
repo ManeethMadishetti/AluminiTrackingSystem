@@ -10,7 +10,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Home from "./Feed/Home" ;
 import Blogs from './Blogs/Blogs';
-import Events from './Events/Events';
+import Events from './Events/Events'
 import Memory from './Memories/Memory';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Box } from "@material-ui/core";
@@ -26,7 +26,7 @@ function App() {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZv0QwStxsPH0IivCqt-vESnaXhwE-7AidGmQFegxYkJyOUYVoBRRsaSM6o5_-EXaz2v8&usqp=CAU" alt=""/>
             </div>
           <div className="header_right">
-                <Link to="/feed"> <HeaderOption Icon={HomeIcon} title="Home"/></Link>
+                <Link to=""> <HeaderOption Icon={HomeIcon} title="Home"/></Link>
                 
                 <Link to="/blogs"> <HeaderOption Icon={ScheduleIcon} title="Schedules"/> </Link>
                 <Link to="/Events"><HeaderOption Icon={EventIcon} title="Events"></HeaderOption></Link>
@@ -41,7 +41,7 @@ function App() {
       
           <switch>
           
-          <Route exact path="/feed">
+          <Route exact path="/">
             <Home />
           </Route>
 
@@ -52,7 +52,6 @@ function App() {
             <Blogs />
           </Route>
           <Route path="/jobs">
-
             <Job/>
           </Route>
           <Route path="/Events">
