@@ -1,0 +1,9 @@
+{
+  "projects": {
+<<<<<<< HEAD
+    "default": "alumni-tracking-system-d618e"
+=======
+    "default": "alumnitrackingsystem-9e88d"
+>>>>>>> 0badd3cbe5bf3057d9b34b53e14748a3afa88a36
+  }
+}

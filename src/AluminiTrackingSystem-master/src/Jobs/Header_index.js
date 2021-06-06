@@ -1,0 +1,23 @@
+import React from 'react'
+import {Box, Grid, Typography,Button} from '@material-ui/core';
+function Header_index({openNewJobModal}) {
+
+    
+    return (
+        <div>
+            <Box py={5} bgcolor='secondary.main' color="white">
+                <Grid container justify="center">
+                    <Grid items xs={10} >
+                    <Box display="flex" justifyContent="space-between">
+                <Typography variant='h4'>Open Job Listing
+                </Typography>
+                <Button onClick={openNewJobModal} variant='contained' color='primary' disableElevation>Post a Job</Button>
+                </Box>
+                </Grid>
+                </Grid>
+            </Box>
+        </div>
+    )
+}
+
+export default Header_index

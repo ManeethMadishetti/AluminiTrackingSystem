@@ -1,8 +1,6 @@
 .feed {
   flex: 0.6;
   margin: 0.2px;
-  margin-left: 2px;
-  padding: 20px;
 }
 .feed_inputContainer {
   background-color: white;

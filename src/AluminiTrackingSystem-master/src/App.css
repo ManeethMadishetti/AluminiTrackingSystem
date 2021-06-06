@@ -1,0 +1,43 @@
+.app {
+  background-color: #f3f2ef;
+  display: flex;
+  flex-direction: column;
+}
+
+.app_body {
+  display: flex;
+  margin-top: 35px;
+  max-width: 1200px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.header {
+  top: 0;
+  display: flex;
+  background-color: white;
+  position: sticky;
+  justify-content: space-evenly;
+  border-bottom: 0.1px solid lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  z-index: 999;
+  background-color: lightyellow;
+}
+
+.header_right {
+  display: flex;
+}
+
+.header_left {
+  display: flex;
+}
+.header_left > img {
+  object-fit: contain;
+  height: 60px;
+  width: 150px;
+  margin-right: 10px;
+  color: blue;
+  background-color: cornflowerblue;
+}
