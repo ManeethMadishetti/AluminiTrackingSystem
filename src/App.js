@@ -25,13 +25,17 @@ import Feed from './Feed/Feed';
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-
+  console.log("User info"+user);
+  console.log(user);
   const logoutOfApp=()=>{
+    alert("loging out");
     console.log("Logging Out.....")
     dispatch(logout());
     alert(auth.currentUser);
     auth.signOut();
-
+   // window.location.reload();
+    
+    
 };
 
   useEffect(() => {
@@ -51,12 +55,13 @@ function App() {
     
   }, []);
   console.log("user Information:"+user);
+ // alert(user.user);
+  
   return (
     
     <div className="app">
-      
-      {!user ?(
-        <Login/>
+      {!user.user ?(
+               <Login/>
       ):(
         
         <Router>
@@ -73,7 +78,7 @@ function App() {
            <Link to="/jobs"> <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/> </Link>
            <Link><HeaderOption Icon={ChatIcon} title="Query Alumina"/> </Link>
            <Link><HeaderOption Icon={NotificationsIcon} title="Notifications"/> </Link>
-           <Link> <HeaderOption avatar={true} title="Me" onClick={logoutOfApp} /> </Link>
+           <Link> <HeaderOption avatar={true} title="Logout" onClick={logoutOfApp} /> </Link>
         </div>
       </div>
       <switch>
