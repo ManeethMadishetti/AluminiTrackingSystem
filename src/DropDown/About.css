@@ -1,0 +1,19 @@
+#About{
+    border-width: 10px;
+    align-content: center;
+    margin-top: 20px;
+    margin-left: 25px;
+   
+}
+#About_container{
+    align-items: center;
+    align-content: center;
+    width: 500px;
+    margin-left: px;
+    background-color:white;
+    border-radius: 5px;
+    border-color: black;
+}
+#container{
+    align-items: center;
+}

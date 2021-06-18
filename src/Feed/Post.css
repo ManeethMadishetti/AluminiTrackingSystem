@@ -28,4 +28,6 @@
 .post_buttons {
   display: flex;
   justify-content: space-evenly;
+  position: right;
+  margin-left: 30px;
 }

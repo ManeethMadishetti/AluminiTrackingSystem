@@ -3,6 +3,7 @@ import './Login.css'
 import {auth} from "../firebase/config"
 import { useDispatch } from 'react-redux';
 import { login } from '../features/userSlice';
+import {BrowserRouter as Router,Route,Switch,Link} from 'react-router-dom';
 
 function Login() {
     const [email,setEmail] = useState("");
@@ -55,16 +56,31 @@ function Login() {
         <div className="login">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZv0QwStxsPH0IivCqt-vESnaXhwE-7AidGmQFegxYkJyOUYVoBRRsaSM6o5_-EXaz2v8&usqp=CAU" 
             alt=""/>
-            <form>
-                <input value={name} onChange={e=> setName(e.target.value)} placeholder='Full name (required)' type="text"/>
-                <input value={profilePic} onChange={e=>setProfilePic(e.target.value)}placeholder='profile pic url' type='text'/>
-                <input value={email} onChange={e => setEmail(e.target.value)} placeholder='Email' type='email'/>
-                <input value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password' type='password'/>
-                <button type="submit" onClick={loginToApp}>Sign-in</button>
-            </form>
-            <p>Not a member?{" "}
-                <span className="login__register" onClick={register}>Register Now</span>
-            </p>
+            <Router>
+            <Link to="">Login </Link>
+            <Link to="/regis">Register Now</Link>
+            <switch>
+          
+          <Route exact path="/">
+                <form className='login_form'>
+                    <input value={email} onChange={e => setEmail(e.target.value)} placeholder='Email' type='email'/>
+                    <input value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password' type='password'/>
+                    <button type="submit" onClick={loginToApp}>Sign-in</button>
+                </form>
+          </Route>
+          <Route path="/regis">
+                <form className='login_form'>
+                    <input value={name} onChange={e=> setName(e.target.value)} placeholder='Full name (required)' type="text"/>
+                    <input value={profilePic} onChange={e=>setProfilePic(e.target.value)}placeholder='profile pic url' type='text'/>
+                    <input value={email} onChange={e => setEmail(e.target.value)} placeholder='Email' type='email'/>
+                    <input value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password' type='password'/>
+                    <button type="submit" onClick={register}>Register</button>
+                </form>
+          </Route>
+
+          </switch>
+
+            </Router>
         </div>
     )
 }

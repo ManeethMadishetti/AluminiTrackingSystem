@@ -13,7 +13,7 @@
 }
 
 .header {
-  top: 0;
+  top: 0px;
   display: flex;
   background-color: white;
   position: sticky;
@@ -24,6 +24,8 @@
   width: 100%;
   z-index: 999;
   background-color: lightyellow;
+  border-radius: 10px;
+  margin-top: -1px;
 }
 
 .header_right {
@@ -40,4 +42,11 @@
   margin-right: 10px;
   color: blue;
   background-color: cornflowerblue;
+}
+.navbarheader{
+  border-radius: 20px;
+}
+#dropdown-secondary-button{
+  color: white;
+  background-color: gray;
 }

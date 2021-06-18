@@ -14,9 +14,10 @@ import ViewJobModal from './ViewJobModal'
 function Job() {
     const [jobs,setJobs]= useState([]);
     const [loading,setLoading]= useState(true);
+
     const fetchJobs= async()=>{
         setLoading(true);
-        const req= await db.collection('jobs')
+        const req= await db.collection('jobs').orderBy("timestamp","desc")
         .get()
         .then(querySnapshot => {
             
@@ -27,28 +28,24 @@ function Job() {
             })
         
     };
-
-    const fetchJobsCustom = async(jobSearch)=>{
-        setLoading(true);
-        setCustomSearch(true);
-        const req= await db.collection('jobs')
-        .where('location','==',jobSearch.location)
-        .where('type','==',jobSearch.type)
-        .get()
-        .then(querySnapshot => {
-            
-            const data = querySnapshot.docs.map(job => ({...job.data(), id:job.id}));
-             console.log(data); // array of cities objects
-                setJobs(data);
-                setLoading(false);
-            })
-    };
+    
     const postJob = async jobDetails =>{
-        await db.collection('jobs').add(jobDetails);
+        await db.collection('jobs').add({
+            title:jobDetails.title,
+            type:jobDetails.type,
+            companyName:jobDetails.companyName,
+            companyUrl:jobDetails.companyUrl,
+            location: jobDetails.location,
+            link:jobDetails.link,
+            description: jobDetails.description,
+            skills:jobDetails.skills,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
          fetchJobs();
 
     }
-    const [customSearch, setCustomSearch]=useState(false);
+  
+//    const [customSearch, setCustomSearch]=useState(false);
     const [newJobModal,setNewJobModal]=useState(false);
     const [viewJob, setViewJob]= useState({});
 
@@ -65,7 +62,7 @@ function Job() {
             <Box mb={3}>
             <Grid container justify='center'>
                 <Grid item xs={10}>
-                    <SearchBar fetchJobsCustom={fetchJobsCustom}  />
+                 { /*  <SearchBar fetchJobsCustom={fetchJobsCustom}  />*/}
                     {
                         loading?<Box display="flex" justifyContent="center"> <CircularProgress/></Box>
                         : 
