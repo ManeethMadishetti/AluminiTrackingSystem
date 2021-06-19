@@ -12,11 +12,11 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.login_form {
+.login > form {
   display: flex;
   flex-direction: column;
 }
-.login_form > input {
+.login > form > input {
   width: 350px;
   height: 50px;
   font-size: 20px;
@@ -24,7 +24,7 @@
   margin-bottom: 10px;
   border-radius: 5px;
 }
-.login_form > button {
+.login > form > button {
   width: 365px;
   height: 50px;
   font-size: large;

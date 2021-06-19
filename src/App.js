@@ -20,6 +20,7 @@ import Query from  './QueryAlumni/QueryAlumni';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Box } from "@material-ui/core";
 import Job from './Jobs/Job';
+import Chat from './Chat/Chat';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import EventIcon from '@material-ui/icons/Event';
 import { login, logout, selectUser } from './features/userSlice';
@@ -102,7 +103,8 @@ function App() {
             <Memory />
           </Route>
           <Route path="/blogs">
-            <Blogs />
+            <Chat/>
+
           </Route>
           <Route path="/jobs">
             <Job/>
